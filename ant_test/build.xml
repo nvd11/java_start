@@ -7,7 +7,7 @@
 	<target name="main">
 
 		<!-- compile -->
-		<javac srcdir="src\main\hello\ant" destdir="build\classes"/>
+		<javac srcdir="src\main\hello\ant" destdir="build\classes" debug="on" debuglevel="lines,vars,source"/>
 
 		<!-- run -->
 		<java classname="hello.ant.HelloAnt">

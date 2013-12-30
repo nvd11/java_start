@@ -19,4 +19,5 @@
 *.out
 *.app
 
-
+# dia photos
+*.dia~

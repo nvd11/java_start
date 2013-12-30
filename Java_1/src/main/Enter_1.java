@@ -11,6 +11,12 @@ public class Enter_1{
 	private static void test_out_put(){
 		Base_test1 bt1 = new Base_test1();
 		bt1.test_output1();
+		bt1.test_output2();
+		bt1.test_output3();
+		bt1.test_output4();
+		bt1.test_convert1();
+		
+
 	}
 
 }

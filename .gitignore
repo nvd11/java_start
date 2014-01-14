@@ -16,8 +16,10 @@
 
 # Executables
 *.exe
+*.stackdump
 *.out
 *.app
 
 # dia photos
 *.dia~
+*.autosave

@@ -1,11 +1,13 @@
 import Base_kng.*;
-import Object_kng.*;
+//import Object_kng.*;
+import Object_kng.Pkg_1.*;
 
 public class Enter_1{
 	public static void main(String[] args){
 		System.out.printf("hello ant, it's the my meeting with ant!\n");
 		//test_out_put();
-		one_object();
+		//one_object();
+		inherit_kng1();
 	}
 
 
@@ -28,5 +30,11 @@ public class Enter_1{
 
 		obj2 = Static_1_object.create();
 		obj2.print();
+	}
+
+	//inherit kng 1
+	private static void inherit_kng1(){
+		Sub_c3 sc3 = new Sub_c3();
+		sc3.f();
 	}
 }

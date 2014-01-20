@@ -1,13 +1,15 @@
 import Base_kng.*;
 //import Object_kng.*;
 import Object_kng.Pkg_1.*;
+import Object_kng.Super_kw.*;
 
 public class Enter_1{
 	public static void main(String[] args){
 		System.out.printf("hello ant, it's the my meeting with ant!\n");
 		//test_out_put();
 		//one_object();
-		inherit_kng1();
+		//inherit_kng1();
+		super_kw();
 	}
 
 
@@ -37,4 +39,9 @@ public class Enter_1{
 		Sub_c3 sc3 = new Sub_c3();
 		sc3.f();
 	}
+
+	//Super kng
+	private static void super_kw(){
+		Super_kw.f();	
+	}	
 }

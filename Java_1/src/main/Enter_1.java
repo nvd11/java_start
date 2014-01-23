@@ -2,6 +2,8 @@ import Base_kng.*;
 //import Object_kng.*;
 import Object_kng.Pkg_1.*;
 import Object_kng.Super_kw.*;
+import Object_kng.Overwrite_kng.*;
+import Object_kng.Poly_kng.*;
 
 public class Enter_1{
 	public static void main(String[] args){
@@ -9,7 +11,11 @@ public class Enter_1{
 		//test_out_put();
 		//one_object();
 		//inherit_kng1();
-		super_kw();
+		//super_kw();
+		//Ovwrite1.f();
+		//Poly_1.f();
+		//Poly_2.f();
+		Poly_3.print();
 	}
 
 

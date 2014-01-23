@@ -4,6 +4,7 @@ import Object_kng.Pkg_1.*;
 import Object_kng.Super_kw.*;
 import Object_kng.Overwrite_kng.*;
 import Object_kng.Poly_kng.*;
+import Object_kng.Abstract_kng.*;
 
 public class Enter_1{
 	public static void main(String[] args){
@@ -15,7 +16,8 @@ public class Enter_1{
 		//Ovwrite1.f();
 		//Poly_1.f();
 		//Poly_2.f();
-		Poly_3.print();
+		//Poly_3.print();
+		Abstract_1.f();
 	}
 
 

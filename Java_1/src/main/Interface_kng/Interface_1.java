@@ -8,9 +8,8 @@ interface It_1{
 
 	//public abstract It_1();	  //error,  must without a constructor
 
-	void print(); //public abstract
+	abstract void print(); //public abstract
 }
-
 public class Interface_1{
 	public static void f(){
 

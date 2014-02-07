@@ -1,5 +1,7 @@
 package Object_kng.Abstract_kng;
 
+import Interface_kng.*;
+
 abstract class Abs_A1{
 	int id;
 	String name;	

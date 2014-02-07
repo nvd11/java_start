@@ -7,6 +7,7 @@ import Object_kng.Poly_kng.*;
 import Object_kng.Abstract_kng.*;
 import Object_kng.Final_kng.*;
 import Interface_kng.*;
+import Interface_kng.Extend.*;
 
 public class Enter_1{
 	public static void main(String[] args){
@@ -21,7 +22,9 @@ public class Enter_1{
 		//Poly_3.print();
 		//Abstract_1.f();
 		//Abstract_2.f();
-		Final_2.f();
+		//Final_2.f();
+		//Interface_1.f();
+		Interface_3.f();
 	}
 
 

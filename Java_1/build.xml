@@ -14,6 +14,7 @@
 		<java classname="Enter_1">
 			<classpath>
 				<pathelement path="build\classes"/>
+				<pathelement path="/home/gateman/Studies/Java/java_start/Java_1/jar/generated/Test_jar.jar"/>
 			</classpath>
 		</java>
 

@@ -10,6 +10,7 @@ import Interface_kng.*;
 import Interface_kng.Extend.*;
 import Package_kng.*;
 import Exception_kng.*;
+import Thread_kng.*;
 
 public class Enter_1{
 	public static void main(String[] args){
@@ -28,7 +29,9 @@ public class Enter_1{
 		//Interface_1.f();
 		//Interface_3.f();
 		//Pkg_1.f();
-		Expt_6.g();
+		//Expt_6.g();
+		//S_thread_expl.f();
+		M_thread_expl.f();
 	}
 
 

@@ -14,6 +14,8 @@ import Thread_kng.*;
 import Thread_kng.Td_priority_kng.*;
 import Thread_kng.Td_ctrl.*;
 import Thread_kng.Td_synchronized.*;
+import Object_kng.Object_baseMethod.*;
+import String_kng.*;
 
 public class Enter_1{
 	public static void main(String[] args){
@@ -33,6 +35,14 @@ public class Enter_1{
 		//Interface_3.f();
 		//Pkg_1.f();
 		//Expt_6.g();
+		//Ob_tostring_1.f();
+		//Ob_tostring_2.f();
+		//Ob_equal_1.f();
+		//Ob_equals_2.f();
+		//Ob_equals_3.f();
+		//Ob_equals_4.f();
+		//Ob_equals_5.f();
+		//Ob_getclass_1.f();
 		//S_thread_expl.f();
 		//M_thread_expl.f();
 		//M_thread_expl2.g();
@@ -44,8 +54,10 @@ public class Enter_1{
 		//Td_syn_2.st();
 		//Td_syn_3.st();
 		//Td_syn_4.st();
-		Td_syn_5.st();
+		//Td_syn_5.st();
 		//Td_syn_test.st();
+        //String_5.f();
+        StringBuffer_3.f();
 	}
 
 

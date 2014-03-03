@@ -14,6 +14,7 @@ import Thread_kng.*;
 import Thread_kng.Td_priority_kng.*;
 import Thread_kng.Td_ctrl.*;
 import Thread_kng.Td_synchronized.*;
+import Thread_kng.Td_wait_notify.*;
 import Object_kng.Object_baseMethod.*;
 import String_kng.*;
 
@@ -57,7 +58,8 @@ public class Enter_1{
 		//Td_syn_5.st();
 		//Td_syn_test.st();
         //String_5.f();
-        StringBuffer_3.f();
+        //StringBuffer_3.f();
+        Td_prod_1.f();
 	}
 
 

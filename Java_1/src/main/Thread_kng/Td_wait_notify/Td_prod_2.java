@@ -1,21 +1,13 @@
 package Thread_kng.Td_wait_notify;
+import Thread_kng.Td_wait_notify.Prod_1;
 
-class Prod_1{
-    private int id;
-    public int getId(){
-        return this.id;
-    }
-    public Prod_1(int id){
-        this.id = id;
-    }
-}
 
-class ProdQueue_1{
+class ProdQueue_2{
     private Prod_1[] prod_q;
     private int pRear;
     private int pFront;
 
-    public ProdQueue_1(int len){
+    public ProdQueue_2(int len){
         prod_q = new Prod_1[len + 1]; //array queue. set the max length = capacity + 1
         pRear = 0;
         pFront = 0;
@@ -77,10 +69,10 @@ class ProdQueue_1{
     } 
 }
 
-class Producer_1 implements Runnable{
-    private ProdQueue_1 pq;
+class Producer_2 implements Runnable{
+    private ProdQueue_2 pq;
     private int count;
-    public Producer_1(ProdQueue_1 pq, int count){
+    public Producer_2(ProdQueue_2 pq, int count){
         this.pq = pq;
         this.count = count;
     }
@@ -107,9 +99,9 @@ class Producer_1 implements Runnable{
 }
 
 
-class Seller_1 implements Runnable{
-    private ProdQueue_1 pq;
-    public Seller_1(ProdQueue_1 pq){
+class Seller_2 implements Runnable{
+    private ProdQueue_2 pq;
+    public Seller_2(ProdQueue_2 pq){
         this.pq = pq;
     }
 
@@ -132,11 +124,11 @@ class Seller_1 implements Runnable{
 
 }
 
-public class Td_prod_1{
+public class Td_prod_2{
     public static void f(){
-        ProdQueue_1 pq = new ProdQueue_1(6);
-        Producer_1 producer = new Producer_1(pq,20);
-        Seller_1 seller = new Seller_1(pq);
+        ProdQueue_2 pq = new ProdQueue_2(6);
+        Producer_2 producer = new Producer_2(pq,20);
+        Seller_2 seller = new Seller_2(pq);
 
         Thread thrd_prod = new Thread(producer);
         thrd_prod.start();
@@ -147,35 +139,6 @@ public class Td_prod_1{
 
     }
 
-    public static void f1(){
-        ProdQueue_1 pq = new ProdQueue_1(6);
-        Prod_1 p;
-
-        p = new Prod_1(1);
-        pq.enQueue(p);
-
-        p = new Prod_1(2);
-        pq.enQueue(p);
-
-        p = new Prod_1(3);
-        pq.enQueue(p);
-        p = new Prod_1(4);
-        pq.enQueue(p);
-        p = new Prod_1(5);
-        pq.enQueue(p);
-        p = new Prod_1(6);
-        pq.enQueue(p); 
-
-        pq.deQueue();
-        pq.deQueue();
-        p = new Prod_1(7);
-        pq.enQueue(p);
-        p = new Prod_1(8);
-        pq.enQueue(p);
-        //p = new Prod_1(9);
-        //pq.enQueue(p);
-        System.out.println(pq.toString());
-    }
 
     
 }

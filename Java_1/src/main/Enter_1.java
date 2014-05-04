@@ -17,6 +17,7 @@ import Thread_kng.Td_synchronized.*;
 import Thread_kng.Td_wait_notify.*;
 import Object_kng.Object_baseMethod.*;
 import String_kng.*;
+import Collection_kng.*;
 
 public class Enter_1{
 	public static void main(String[] args){
@@ -60,7 +61,9 @@ public class Enter_1{
         //String_5.f();
         //StringBuffer_3.f();
         //Td_prod_1.f();
-        Td_prod_2.f();
+        //Td_prod_2.f();
+        //Collect1.f();
+        Collect1.g();
 	}
 
 

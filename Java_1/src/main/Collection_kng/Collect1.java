@@ -41,4 +41,15 @@ public class Collect1{
            System.out.println(arr_l.get(i)); 
         }     
     }
+
+    public static void h(){
+        int i = 1;
+        char b = 'c';
+        System.out.printf("%d,%c\n",i,b);
+
+        ArrayList Arr = new ArrayList();
+        Arr.add(1);
+        Arr.add('b');
+        System.out.printf("%d\n","Jack".length());
+    }
 }

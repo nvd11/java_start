@@ -18,6 +18,9 @@ import Thread_kng.Td_wait_notify.*;
 import Object_kng.Object_baseMethod.*;
 import String_kng.*;
 import Collection_kng.*;
+import Collection_kng.Comparable_kng.*;
+import Collection_kng.HashSet_kng.*;
+import Collection_kng.Iterator_kng.*;
 
 public class Enter_1{
 	public static void main(String[] args){
@@ -63,7 +66,11 @@ public class Enter_1{
         //Td_prod_1.f();
         //Td_prod_2.f();
         //Collect1.f();
-        Collect1.h();
+        //Collect1.h();
+        //Compare1.f();
+        //Compare2.f();
+        //Hashset1.f();
+        Iterator1.f();
 	}
 
 

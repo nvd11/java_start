@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="project">
+    <!--need config  start          -->
+    <property name="projectName" value="Test_web" />
+    <!-- path of tomcat -->
+    <property name="tomcat.home" value="/home/gateman/Programs/Tomcat8" />
+    <!-- path of webapp -->
+    <property name="webapp.dir" value="${basedir}/WebContent" />
+    <!-- path of config file -->
+    <property name="config.dir" value="${basedir}/resources" />
+    <!-- path of java source file -->
+    <property name="src.dir" value="${basedir}/src" />
+    <!--need config end              -->
+
+
+    <!-- path of jar package-->
+    <property name="lib.dir" value="${webapp.dir}/WEB-INF/lib" />
+    <!-- generate to this path-->
+    <property name="dist.dir" value="${basedir}/dist" />
+    <!-- path of classes compiled-->
+    <property name="build.dir" value="${webapp.dir}/WEB-INF/classes" />
+
+    <!-- 初始化classpath -->
+    <path id="classpath">
+        <!-- webapp/lib -->
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+        <!-- tomcat/lib -->
+        <fileset dir="${tomcat.home}/lib">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+  
+    <!-- 删除之前的目录结构 -->
+    <target name="clear" description="清理旧文件">
+    <echo message="1、删除之前的目录结构" />
+        <delete dir="${build.dir}" />
+        <delete dir="${dist.dir}" />
+        <delete file="${tomcat.home}/webapps/${webapp.name}.war" />
+        <delete dir="${tomcat.home}/webapps/${webapp.name}" />
+    </target>
+  
+    <!-- 创建目录结构 -->
+    <target name="creatDir" depends="clear" description="创建初始化目录结构">
+    <echo message="2、创建目录结构" />
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${dist.dir}" />
+    </target>
+  
+    <!-- 编译java -->
+    <target name="build" depends="creatDir" description="编译java文件">
+    <echo message="3、编译java" />
+        <javac srcdir="${src.dir}" destdir="${build.dir}"
+            includeantruntime="false" nowarn="on" source="1.6" target="1.6"
+            deprecation="true" debug="true" encoding="UTF-8">
+            <compilerarg line="-Xlint:unchecked" />
+            <classpath refid="classpath" />
+        </javac>
+        <copy todir="${build.dir}">
+            <fileset dir="${src.dir}">
+                <include name="**/*.xml" />
+                <include name="**/*.properties" />
+                <include name="**/*.sql" />
+            </fileset>
+            <fileset dir="${config.dir}">
+                <include name="**/*.xml" />
+                <include name="**/*.properties" />
+                <include name="**/*.sql" />
+            </fileset>
+        </copy>
+    </target>
+      
+    <!-- 打成war包, 名称默认为 项目名 -->
+    <target name="war" depends="build" description="打成war包">
+    <echo message="4、打成war包" />
+        <war warfile="${dist.dir}/${projectName}.war" webxml="${webapp.dir}/WEB-INF/web.xml">
+            <fileset dir="${webapp.dir}"/> 
+<!--             <lib dir="${lib.dir}" /> -->
+<!--             <classes dir="${build.dir}/classes" /> -->
+        </war>
+    </target>
+      
+    <!-- copy war包 tomcat的deploy目录 -->
+    <target name="deploy" depends="war" description="部署项目">
+    <echo message="5、copy war包 tomcat的deploy目录" />
+        <copy file="${dist.dir}/${projectName}.war" todir="${tomcat.home}/webapps" />
+    </target>
+      
+</project>

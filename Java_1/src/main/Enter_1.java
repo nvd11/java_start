@@ -21,9 +21,12 @@ import Collection_kng.*;
 import Collection_kng.Comparable_kng.*;
 import Collection_kng.HashSet_kng.*;
 import Collection_kng.Iterator_kng.*;
+import Collection_kng.HashMap_kng.*;
+import Array_kng.*;
+import Stream_kng.*;
 
 public class Enter_1{
-	public static void main(String[] args){
+	public static void main(String[] args) throws Exception{
 		System.out.printf("hello ant, it's the my meeting with ant!\n");
 		//test_out_put();
 		//one_object();
@@ -70,7 +73,15 @@ public class Enter_1{
         //Compare1.f();
         //Compare2.f();
         //Hashset1.f();
-        Iterator1.f();
+        //Iterator1.f();
+        //HashMap1.f();
+        //Array1.f();
+        //Array2.f();
+        //Array3.f();
+        //Stream1.f();
+        //Reader4.f();
+        //Writer2.f();
+        InputStream1.f();
 	}
 
 

@@ -24,10 +24,14 @@ import Collection_kng.Iterator_kng.*;
 import Collection_kng.HashMap_kng.*;
 import Array_kng.*;
 import Stream_kng.*;
+import Stream_kng.BufferStream_kng.*;
+import Stream_kng.DataStream_kng.*;
+import Stream_kng.ConvertStream_kng.*;
+import Stream_kng.PrintStream_kng.*;
 
 public class Enter_1{
 	public static void main(String[] args) throws Exception{
-		System.out.printf("hello ant, it's the my meeting with ant!\n");
+		//System.out.printf("hello ant, it's the my meeting with ant!\n");
 		//test_out_put();
 		//one_object();
 		//inherit_kng1();
@@ -81,7 +85,15 @@ public class Enter_1{
         //Stream1.f();
         //Reader4.f();
         //Writer2.f();
-        InputStream1.f();
+        //InputStream1.f();
+        //Stream3.f();
+        //BufferStream1.f();
+        //DataStream1.f();
+        //DataStream2.f();
+        //PrintStream1.f();
+        //SystemOut1.f();
+        SystemErr1.f();
+        //GetStrFromKeyBoard2.f();
 	}
 
 

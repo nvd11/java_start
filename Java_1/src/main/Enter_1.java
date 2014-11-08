@@ -28,6 +28,7 @@ import Stream_kng.BufferStream_kng.*;
 import Stream_kng.DataStream_kng.*;
 import Stream_kng.ConvertStream_kng.*;
 import Stream_kng.PrintStream_kng.*;
+import UDP_kng.*;
 
 public class Enter_1{
 	public static void main(String[] args) throws Exception{
@@ -92,8 +93,10 @@ public class Enter_1{
         //DataStream2.f();
         //PrintStream1.f();
         //SystemOut1.f();
-        SystemErr1.f();
+        //SystemErr1.f();
         //GetStrFromKeyBoard2.f();
+        UDP_Client1.f();
+        //UDP_Server1.f();
 	}
 
 

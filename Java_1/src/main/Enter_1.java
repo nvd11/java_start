@@ -6,8 +6,12 @@ import Object_kng.Overwrite_kng.*;
 import Object_kng.Poly_kng.*;
 import Object_kng.Abstract_kng.*;
 import Object_kng.Final_kng.*;
+import Object_kng.InternalClass_kng.*;
 import Interface_kng.*;
 import Interface_kng.Extend.*;
+import Interface_kng.Animal_1.*;
+import Interface_kng.Animal_2.*;
+import Interface_kng.Animal_3.*;
 import Package_kng.*;
 import Exception_kng.*;
 import Thread_kng.*;
@@ -95,8 +99,15 @@ public class Enter_1{
         //SystemOut1.f();
         //SystemErr1.f();
         //GetStrFromKeyBoard2.f();
-        UDP_Client1.f();
+        //UDP_Client1.f();
         //UDP_Server1.f();
+        //Animal_1.f();
+        //Animal_2.f();
+        //Animal_3.f();
+        //InternalClass1.f();
+        //InternalClass2.f();
+        //InternalClass3.f();
+        InternalClass4.f();
 	}
 
 

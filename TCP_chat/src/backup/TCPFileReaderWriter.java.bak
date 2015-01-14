@@ -1,0 +1,118 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.DataInputStream;
+import java.io.PrintStream;
+import java.io.BufferedInputStream;
+import java.io.File;
+
+
+public class TCPFileReadWriter{
+
+    private File fFile = null;
+    private boolean startedFlag = false;
+    private FileInputStream fis = null;
+    private BufferedInputStream bis = null;
+    private FileOutputStream fos = null;
+    private PrintStream ps = null;
+    private DataInputStream dis = null; 
+
+    private boolean fStart(){
+        try{
+            fis = new FileInputStream(fFile);
+            bis = new BufferedInputStream(fis,4096);
+            fos = new FileOutputStream(fFile);
+            ps  = new PrintStream(fos);
+            dis = new DataInputStream(bis);
+
+            //bis.mark(4096);
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("TCPPasswordReadWriter: pstart fail!");
+            return false;    
+        }
+        this.startedFlag = true;
+        return true;
+    }
+
+    public void fClose(){
+        try{
+            ps.close();
+            dis.close();
+            this.startedFlag = false;
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("TCPPasswordReadWriter: pClose faile1");
+        }
+
+    }
+
+    private TCPFileReadWriter(){
+        
+    }
+
+    public static TCPFileReadWriter getObject(File f){
+        TCPFileReadWriter frw = new TCPFileReadWriter();
+        frw.fFile = f;
+        if (false == frw.fStart()){
+            return null;
+        } 
+
+        return frw;
+    }
+
+    //write a String to the file
+    public boolean writeString(String str){
+        if(false == this.startedFlag){
+            System.err.println("TcpFileReadWriter: this object is closed already");
+            return false;
+        }
+    
+        ps.printf("%s",str);
+        ps.flush();
+        return true; 
+    }
+
+    public String readFileLine(){
+        if(false == this.startedFlag){
+            System.err.println("TcpFileReadWriter: this object is closed already");
+            return null;
+        }
+    
+        String str = null;
+        try{
+           // str = dis.readLine();
+           str ="!2";
+        }catch(Exception e){
+            e.printStackTrace();            
+            System.err.println("TcpFileReadWriter: readFileLine Fail!");
+            return null;
+        }
+
+        return str;
+    }
+
+    public boolean fReset(){
+        if(false == this.startedFlag){
+            System.err.println("TcpFileReadWriter: this object is closed already");
+            return false;
+        }
+    
+        try{
+            int a= 1;
+            //bis.reset();
+        }catch(Exception e){
+            e.printStackTrace();
+            System.err.println("TcpFileReadWriter: fReset fail!!");
+            return false;
+        }
+
+        return true;
+    }
+
+
+
+
+
+
+
+}

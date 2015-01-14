@@ -1,0 +1,16 @@
+window_sizes 1440 874 337 1097 680 120
+diagrams
+  active  classdiagram_ref 128002 // classuml1
+    1076 651 100 4 0 0
+end
+show_stereotypes
+selected operation_ref 128130 // creatUI
+open
+  class_ref 128258 // TcpChatClientForm
+  class_ref 134786 // TcpServer
+  class_ref 134914 // TcpClientSocket
+  class_ref 135042 // TcpMessage
+  class_ref 141570 // TcpSendThread
+  class_ref 148226 // TcpConfigReader
+end
+end

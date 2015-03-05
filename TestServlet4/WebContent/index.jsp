@@ -16,6 +16,12 @@ function hello(){
 	}
 }
 
+function JumpToLoginPage(){
+	var formObj = document.forms["form1"];
+	formObj.submit();
+	return;
+}
+
 </script>
 
 <head>
@@ -25,7 +31,15 @@ function hello(){
 
 </head>
 <body>
-	Name:<input type="text" id="name" />
-	<input type="button" onclick="hello()" value="确定" />
+	<form name="form1" id="form1" action="/TestServlet4/login" method="post">
+	</form>
+
+	<br/>
+	<p>It's a landing page<p>
+	<input type="button" onclick="JumpToLoginPage()" value="login" />
+	
+	
+	
+	
 </body>
 </html>

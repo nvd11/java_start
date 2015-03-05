@@ -9,4 +9,28 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+   <!-- servlet-name is the nick name of servlet object
+  		The source name is user defined, 
+  		it's suggested that using the name of servlet class 
+  		
+  		servlet-class is the full name(include packege path) of the servlet object
+  -->
+  <servlet>
+ 	<servlet-name>ServletLoginPage</servlet-name> 
+ 	<servlet-class>com.controller.ServletLoginPage</servlet-class> 
+  </servlet>
+  
+  
+  <!-- the mapping of servlet of jsp action
+  	the servlet-name must be same with the above "servlet-name"
+  	url-pattern is the source name of which will access servlet object
+  	it must be started with "/"
+   -->
+   
+  <servlet-mapping>
+ 	<servlet-name>ServletLoginPage</servlet-name> 
+ 	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

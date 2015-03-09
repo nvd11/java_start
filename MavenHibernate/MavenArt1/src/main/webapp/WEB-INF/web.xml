@@ -3,5 +3,12 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ServletLogin</servlet-name>
+  	<servlet-class>com.controller.ServletLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletLogin</servlet-name>
+  	<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
 </web-app>

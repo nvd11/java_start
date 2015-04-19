@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+	
+	<!-- Enable @Controller model-->	
+	<annotation-driven />
+	
+	<!-- Handles HTTP GET request for /resource/** by efficiently serving
+	 up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	
+	<!-- Resolves vies selectd for rendering by @Controller to .jsp resources in the 
+	 /WEB-INF/views direcvc-elt.1: Cannot find the declaration of element 'beans:beans'tory -->
+	 <beans:bean
+	 	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	 	<beans:property name="prefix" value="/WEB-INF/views/" />
+	 	<beans:property name="suffix" value=".jsp" />
+	 </beans:bean>
+	 
+	 <!--  Configure to plugin JSON as request and response in the method handler -->
+	 <beans:bean
+	 	class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	 	<beans:property name="messageConverters">
+	 		<beans:list>
+	 			<beans:ref bean="jsonMessageConverter" />
+	 		</beans:list>
+	 	</beans:property>
+	 </beans:bean>
+	 
+	 <!-- Config bean to convert JSON to POJO and vice versa -->
+	 <beans:bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	 </beans:bean>
+	 
+	 <!-- DB config -->
+	 <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+	 	destroy-method="close">
+		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<beans:property name="url" value="jdbc:oracle:thin:@TPRHEL:1521:orcl" />
+		<beans:property name="username" value="bill" />
+		<beans:property name="password" value="32565624" />
+	 </beans:bean>
+	 
+	 <!-- Hibernate 4 SessionFactory Bean definition -->
+	 <beans:bean id="hibernate4AnnotatedSessionFactory"
+	 	class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="annotatedClasses">
+			<beans:list>
+				<beans:value>com.model.Country</beans:value>
+				<beans:value>com.model.Ccy_Region</beans:value>
+			</beans:list>
+		</beans:property>
+		
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</beans:prop>	
+				<beans:prop key="hibernate.show_sql">true</beans:prop>	
+			</beans:props>
+		</beans:property>
+	 </beans:bean>
+	 
+	 <beans:bean id="CountryDAO" class="com.dao.CountryDAOImpl">
+	 	<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	 </beans:bean>
+	 
+	 <beans:bean id="Ccy_RegionDAO" class="com.dao.Ccy_RegionDAOImpl">
+	 	<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	 </beans:bean>
+	 
+	 <beans:bean id="countryService" class="com.service.CountryServiceImpl">
+	 	<beans:property name="CountryDAO" ref="CountryDAO"></beans:property>
+	 	<beans:property name="Ccy_RegionDAO" ref="Ccy_RegionDAO"></beans:property>
+	 </beans:bean>
+	 
+	 <context:component-scan base-package="com" />
+	 <tx:annotation-driven transaction-manager="transactionManager"/>
+	 
+	 <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	 	<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	 </beans:bean>
+	 
+	 
+	 
+	 
+	 
+		
+		
+</beans:beans>
+		
+	

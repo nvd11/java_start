@@ -1,0 +1,182 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SpringSample2</groupId>
+  <artifactId>SpringSample2</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SpringSample2 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+ <properties>
+	<java-version>1.7</java-version> 
+	<org.springframework.version>4.1.4.RELEASE</org.springframework.version>
+	<org.aspectj.version>1.7.4</org.aspectj.version>
+	<org.slf4j.version>1.7.5</org.slf4j.version>
+	<hibernate.version>4.2.11.Final</hibernate.version>
+	<logback.version>1.1.2</logback.version>
+	<jackson-databind.version>2.2.3</jackson-databind.version>
+	<jtds.version>1.2.8</jtds.version>
+	<commons-dbcp.version>1.4</commons-dbcp.version>
+	<javax.inject.version>1</javax.inject.version>
+	<servlet-api.version>2.5</servlet-api.version>
+	<jsp-api.version>2.1</jsp-api.version>
+	<jstl.version>1.2</jstl.version>
+	<javax.ws.rs-api.version>2.0</javax.ws.rs-api.version>
+	<jxls-core.version>1.0.2</jxls-core.version>
+	<jasypt.version>1.9.2</jasypt.version>
+	<jasypt-spring31.verison>1.9.0</jasypt-spring31.verison>
+ </properties> 
+ 
+  
+  <dependencies>
+  	<!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>${javax.ws.rs-api.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>net.sourceforge.dynamicreports</groupId>
+      <artifactId>dynamicreports-core</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson-databind.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>net.sourceforge.jtds</groupId>
+      <artifactId>jtds</artifactId>
+      <version>${jtds.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${org.springframework.version}</version>
+      <exclusions>
+	      	<exclusion>
+    	  		<groupId>commons-logging</groupId>
+		        <artifactId>commons-logging</artifactId>
+    	   	</exclusion>
+      </exclusions>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    
+    <!-- Apache Commons DBCP -->
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>${commons-dbcp.version}</version>
+    </dependency>
+    
+    <!-- Aspectj -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>${org.aspectj.version}</version>
+    </dependency>
+    
+    <!-- @Inject -->
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>${javax.inject.version}</version>
+    </dependency>
+    
+    <!-- logging -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${org.slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${org.slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${org.slf4j.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    
+    <!--  servlet -->
+	 <dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>${servlet-api.version}</version>
+		<scope>provided</scope>
+ 	 </dependency>
+	 <dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>${jsp-api.version}</version>
+		<scope>provided</scope>
+ 	 </dependency>
+	 <dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>${jstl.version}</version>
+ 	 </dependency>
+ 	 
+ 	 <dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc6</artifactId>
+		<version>11.2.0</version>
+	</dependency>
+  
+  
+    
+  </dependencies>
+  <build>
+    <finalName>SpringSample2</finalName>
+  </build>
+</project>

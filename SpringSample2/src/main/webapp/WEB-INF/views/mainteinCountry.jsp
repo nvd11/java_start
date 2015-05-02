@@ -30,7 +30,17 @@
 	<input type="button" onclick="addButtonClicked()" value="AddCountry">
 	</br></br>
 	<input type="button" onclick="addRegionButtonClicked()" value="AddRegion">
+	</br></br>
+	<input type="button" onclick="getCcyRegionButtonClicked()" value="GetCcyRegion">
+	<input type="button" onclick="getBankListButtonClicked()" value="GetBankList">
+	<input type="button" onclick="testPassPra()" value="testPass">
+	<input type="button" onclick="testPassPra2()" value="testPass2">
+	<input type="button" onclick="getAllCcyRegionHolidayList()" value="getAllCcyRegionHoliday">
+	<input type="button" onclick="addCcyRegionHolidayList()" value="addCcyRegionHoliday">
 	
 
+	</br></br>
+		<textarea id="textAreaPanel" rows="30" cols="98" stype="border: 0px;"></textarea>
+	
 </body>
 </html>

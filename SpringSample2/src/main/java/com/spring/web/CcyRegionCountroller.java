@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import javax.servlet.ServletContext;
 
 import  com.service.CountryService;
-import  com.model.Ccy_Region;
+import  com.model.CcyRegion;
 
 @Controller
 public class CcyRegionCountroller {
@@ -27,13 +27,20 @@ public class CcyRegionCountroller {
 	}
 	
 	@RequestMapping(value = "/addCcyRegion", method = RequestMethod.PUT)
-	public void listenAddCcyRegion(@RequestBody final Ccy_Region cy){
+	public void listenAddCcyRegion(@RequestBody final CcyRegion cy){
 		System.out.println(cy.getCurrency());
 		System.out.println(cy.getRegion());
 		
 		if (false == this.countryService.addCcyRegion(cy)){
 			System.out.println("DB error");
 		}
+	}
+	
+	@RequestMapping(value = "/getCcyRegionList", method = RequestMethod.GET)
+	public @ResponseBody 
+	List<CcyRegion> listenGetRegionList(){
+		List<CcyRegion> listCcyRegionList = this.countryService.getCcyRegionList();
+		return listCcyRegionList;
 	}
 
 }

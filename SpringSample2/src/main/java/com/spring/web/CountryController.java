@@ -13,6 +13,7 @@ import javax.servlet.ServletContext;
 import  com.dto.CountryDTO;
 import  com.service.CountryService;
 import  com.model.Country;
+import  com.model.Bank;
 
 
 @Controller
@@ -27,6 +28,8 @@ public class CountryController {
 	public void setCountryService(CountryService countryService){
 		this.countryService = countryService;
 	}
+	
+	
 	
 	@RequestMapping(value = "/countryMaintenance", method = RequestMethod.GET)
 	public String listenCountryPage(final Model model){
@@ -44,5 +47,27 @@ public class CountryController {
 		}
 	}
 	
+	@RequestMapping(value =  "/GetBankList", method = RequestMethod.GET)
+	public @ResponseBody
+	List<Bank> ListenGetBankList(){
+		
+		System.out.println("baaa");
+		return this.countryService.getBankList();
+	}
+	
+	@RequestMapping(value = "/testPassPra", method = RequestMethod.POST)
+	public String listenTestPassPra(@RequestParam("name") String name, @RequestParam("location") String location, final Model model){
+		System.out.println("aaaa");
+		System.out.println(name);
+		System.out.println(location);
+		return "addCountry";
+	}
+	
+	@RequestMapping(value = "/testPassPra2", method = RequestMethod.POST)
+	public String listenTestPassPra2(@RequestParam("bankId") List<Integer> idlist, final Model model){
+		System.out.println("bbbb");
+		System.out.println(idlist.get(0));
+		return "addCountry";
+	}
 	
 }

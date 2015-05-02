@@ -9,8 +9,8 @@ import javax.persistence.IdClass;
 
 @Entity
 @Table(name = "CCY_REGION")
-@IdClass(Pk_Ccy_Region.class)
-public class Ccy_Region implements Serializable{
+@IdClass(PkCcyRegion.class)
+public class CcyRegion implements Serializable{
 	
 	/**
 	 * 

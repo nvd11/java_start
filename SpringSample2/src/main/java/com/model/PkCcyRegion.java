@@ -3,7 +3,7 @@ package com.model;
 import java.io.Serializable;
 
 //this class just be used as the composite-id of the class "Ccy_Region"
-public class Pk_Ccy_Region implements Serializable {
+public class PkCcyRegion implements Serializable {
 
 	/**
 	 * 
@@ -38,11 +38,11 @@ public class Pk_Ccy_Region implements Serializable {
 			return false;
 		}
 		
-		if (!(other instanceof Ccy_Region)){
+		if (!(other instanceof CcyRegion)){
 			return false;
 		}
 		
-		Ccy_Region crOther = (Ccy_Region)other;
+		CcyRegion crOther = (CcyRegion)other;
 		if (this.getCurrency().equals(crOther.getCurrency()) && this.getRegion().equals(crOther.getRegion())){
 			return true;
 		}

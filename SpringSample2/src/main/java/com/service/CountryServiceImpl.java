@@ -1,9 +1,13 @@
 package com.service;
 
+import java.util.List;
+
 import com.model.Country;
-import com.model.Ccy_Region;
+import com.model.CcyRegion;
+import com.model.Bank;
 import com.dao.CountryDAO;
-import com.dao.Ccy_RegionDAO;
+import com.dao.CcyRegionDAO;
+import com.dao.BankDAO;
 
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.springframework.stereotype.Service;
@@ -13,14 +17,19 @@ import org.springframework.transaction.annotation.Transactional;
 public class CountryServiceImpl implements CountryService{
 	
 	private CountryDAO countryDAO;
-	private Ccy_RegionDAO ccy_regionDAO;
+	private CcyRegionDAO ccyRegionDAO;
+	private BankDAO bankDAO;
 
 	public void setCountryDAO(CountryDAO countryDAO) {
 		this.countryDAO = countryDAO;
 	}
 
-	public void setCcy_RegionDAO(Ccy_RegionDAO ccy_regionDAO) {
-		this.ccy_regionDAO = ccy_regionDAO;
+	public void setBankDAO(BankDAO bankDAO) {
+		this.bankDAO = bankDAO;
+	}
+
+	public void setCcyRegionDAO(CcyRegionDAO ccyRegionDAO) {
+		this.ccyRegionDAO = ccyRegionDAO;
 	}
 
 	@Override
@@ -37,12 +46,26 @@ public class CountryServiceImpl implements CountryService{
 
 	@Override
 	@Transactional
-	public boolean addCcyRegion(Ccy_Region cr) {
-		if (null == this.ccy_regionDAO){
+	public boolean addCcyRegion(CcyRegion cr) {
+		if (null == this.ccyRegionDAO){
 			return false;
 		}
 		
-		System.out.println("Ccy_RegionServiceImpl");
-		return this.ccy_regionDAO.addCcyRegion(cr);
+		System.out.println("CcyRegionServiceImpl");
+		return this.ccyRegionDAO.addCcyRegion(cr);
 	}
+	
+	@Override
+	@Transactional
+	public List<CcyRegion> getCcyRegionList(){
+		return this.ccyRegionDAO.getCcyRegionList();
+	}
+	
+	
+	@Override
+	@Transactional
+	public List<Bank> getBankList(){
+		return this.bankDAO.getBankList();
+	}
+	
 }

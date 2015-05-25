@@ -8,4 +8,5 @@ import com.model.CcyRegionHoliday;
 public interface CcyRegionHolidayDAO {
 	List<CcyRegionHoliday> getAllCcyRegionHolidayList();
 	WebUssResult addCcyRegionHolidayList(List<CcyRegionHoliday> arrCcyRegionHoliday);
+	List<Integer> getYearList();
 }

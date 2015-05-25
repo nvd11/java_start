@@ -2,7 +2,6 @@ package com.dao;
 
 import java.util.List;
 
-
 import com.model.CcyRegionHoliday;
 import com.util.WebUssResult;
 
@@ -38,6 +37,8 @@ public class CcyRegionHolidayDAOImpl implements CcyRegionHolidayDAO{
 			return new WebUssResult(1,"no any entries");
 		}
 		
+		session.beginTransaction();
+		
 		for (int i = 0; i < count;i++){
 			ccyRegionHoliday = arrCcyRegionHoliday.get(i);
 			ccyRegionHoliday.setModifiedStaffId(ccyRegionHoliday.getCreationStaffId());
@@ -51,7 +52,6 @@ public class CcyRegionHolidayDAOImpl implements CcyRegionHolidayDAO{
 			System.out.println(session.getTransaction().isActive());
 		}
 		
-		session.beginTransaction();
 		System.out.println(session.getTransaction().isActive());
 		System.out.println("33333");
 		try{
@@ -76,4 +76,12 @@ public class CcyRegionHolidayDAOImpl implements CcyRegionHolidayDAO{
 		
 		
 		return new WebUssResult(0, "commit successfully!");
-	}}
+	}
+
+	@Override
+	public List<Integer> getYearList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

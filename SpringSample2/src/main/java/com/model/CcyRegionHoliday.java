@@ -33,8 +33,8 @@ public class CcyRegionHoliday implements Serializable {
 	@Column(name = "HOLIDAY_DATE")
 	private Date holidayDate;
 	
-	@Column(name = "LOCK_FLAG", columnDefinition = "nvarchar2")
-	private String lockFlag;
+	@Column(name = "LOCK_FLAG")
+	private boolean lockFlag;
 	
 	@Column(name = "HOLIDAY_TYPE", columnDefinition = "nvarchar2")
 	private String holidayType;
@@ -85,11 +85,11 @@ public class CcyRegionHoliday implements Serializable {
 		this.holidayDate = holidayDate;
 	}
 
-	public String getLockFlag() {
+	public boolean getLockFlag() {
 		return lockFlag;
 	}
 
-	public void setLockFlag(String lockFlag) {
+	public void setLockFlag(boolean lockFlag) {
 		this.lockFlag = lockFlag;
 	}
 

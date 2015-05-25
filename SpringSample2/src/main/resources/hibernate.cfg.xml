@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+<!-- database connection settings -->
+<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<property name="connection.url">jdbc:oracle:thin:@TPRHEL:1521:orcl</property>
+<property name="connection.username">bill</property>
+<property name="connection.password">32565624</property>
+<!--  JDBC connection pool (use the build-in)  -->
+<property name="connection.pool_size">1</property>
+<!-- SQL dialect -->
+<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+<!-- enable hibernate's automatic session context management -->
+<property name="current_session_context_class">thread</property>
+<!-- disable second level cache -->
+<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+<!-- echo sql statements to standout -->
+<property name="show_sql">true</property>
+<property name="hbm2ddl.auto">validate</property>
+
+<!-- mapping model -->
+<mapping class="com.model.CcyRegionHoliday" />
+
+
+</session-factory>
+
+</hibernate-configuration>

@@ -35,4 +35,9 @@ public class CcyRegionDAOImpl implements CcyRegionDAO {
 			
 	}
 
+	@Override
+	public String getTestStr() {
+		return "testStr";
+	}
+
 }

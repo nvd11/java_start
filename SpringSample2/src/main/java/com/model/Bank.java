@@ -1,7 +1,7 @@
 package com.model;
 
 import java.io.Serializable;
-
+import org.apache.commons.scxml.model.SCXML;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -23,15 +23,15 @@ public class Bank implements Serializable {
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_bank_id")
 	@SequenceGenerator(name="seq_bank_id", sequenceName = "SEQ_BANK")
 	@Column(name="ID")
-	private String id;
+	private int id;
 	private String name;
 	private String description;
-	
-	public String getId() {
+	private SCXML scxml;
+	public int getId() {
 		return id;
 	}
 	
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
@@ -50,7 +50,13 @@ public class Bank implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+
+	public SCXML getScxml() {
+		return scxml;
+	}
+
+	public void setScxml(SCXML scxml) {
+		this.scxml = scxml;
+	}
 	
 }

@@ -67,5 +67,10 @@ public class CountryServiceImpl implements CountryService{
 	public List<Bank> getBankList(){
 		return this.bankDAO.getBankList();
 	}
+
+	@Override
+	public String getTestStr() {
+		return "testStrlar";
+	}
 	
 }

@@ -25,6 +25,7 @@ create table BANK(
     ID Numeric(4) not null primary key,
     NAME nvarchar2(10) not null,
     DESCRIPTION nvarchar2(10) null,
+    SCXML blob null,
     CREATION_TIME timestamp with time zone not null
 );
 

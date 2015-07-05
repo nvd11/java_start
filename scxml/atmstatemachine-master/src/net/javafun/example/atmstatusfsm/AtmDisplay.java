@@ -40,7 +40,7 @@ public class AtmDisplay extends JFrame implements ActionListener {
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 		setContentPane(panel);
-		button = makeButton("FIRE_EVENT", AtmStatusEventEnum.getNamesAsCsv(), "Submit" );
+		button = makeButton("FIRE_EVENT1", AtmStatusEventEnum.getNamesAsCsv(), "Submit" );
 		panel.add(button, BorderLayout.CENTER);
 		state = new JLabel(atmStatusFSM.getCurrentStateId());
 		panel.add(state, BorderLayout.SOUTH);
@@ -59,21 +59,29 @@ public class AtmDisplay extends JFrame implements ActionListener {
 	private void initEvents() {
 		eventComboBox.removeAllItems();
 		List<Transition> transitionList = atmStatusFSM.getCurrentState().getTransitionsList();
+		
+		Transition ts = null;
+		if (null != atmStatusFSM.getCurrentState().getTransitionsList("atm.loadSuccess")){
+			ts = (Transition) atmStatusFSM.getCurrentState().getTransitionsList("atm.loadSuccess").get(0);
+			System.out.println(ts.getNext());
+		}
+		
 		for (Transition transition : transitionList) {
 			eventComboBox.addItem(transition.getEvent() );
+			//System.out.println(transition.getNext());
 		}
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
-		if(command.equals("FIRE_EVENT")) {
+		if(command.equals("FIRE_EVENT1")) {
 			checkAndFireEvent();
 		}
 	}
 
 	private boolean checkAndFireEvent() {
 		atmStatusFSM.fireEvent(eventComboBox.getSelectedItem().toString());
-		state.setText(atmStatusFSM.getCurrentStateId());
+		state.setText("the current states: " + atmStatusFSM.getCurrentStateId());
 		initEvents();
 		repaint();
 		return true;

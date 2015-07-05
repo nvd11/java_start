@@ -99,6 +99,8 @@
 	 	<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	 </beans:bean>
 	 
+	 <beans:bean class="com.util.ApplicationContextHandle" lazy-init="false"/>  
+	 
 	 
 	 
 	 

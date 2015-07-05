@@ -12,4 +12,5 @@ public interface CountryService {
 	boolean addCcyRegion(CcyRegion cy);
 	List<CcyRegion> getCcyRegionList();
 	List<Bank> getBankList();
+	String getTestStr();
 }

@@ -65,7 +65,7 @@ public class AtmStatusFSM extends AbstractStateMachine {
 	/* ------------------------------------------------------------------------ */
 	
 	 public void idle() {
-		System.out.println("STATE: idle");
+		System.out.println("STATE: idle1");
 	 }
 	 
 	 public void loading() {

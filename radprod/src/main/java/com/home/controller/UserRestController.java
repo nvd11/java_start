@@ -14,18 +14,33 @@ import com.home.rest.User;
 @RequestMapping("/user")
 public class UserRestController {
 	private Map<Integer,User> userMap = new HashMap<Integer, User>();
-	
+
 	public UserRestController(){
 		userMap.put(1, new User(1,"jack","jacky","jack@163.com"));
 		userMap.put(2, new User(2,"nick","nicky","nick@163.com"));
 		userMap.put(3, new User(3,"jenny","jenny","jenny@163.com"));
 		userMap.put(4, new User(4,"bill","billy","bill@163.com"));
 	}
-	
+
 	@RequestMapping(value="/users", method=RequestMethod.GET)
 	public String list(Model model){
 		model.addAttribute("users", userMap);
 		return "rest/user/users";
 	}
 
+	@RequestMapping(value="/add", method=RequestMethod.GET)
+	public String addUserPage(Model model){
+        //pass a empty object to frontend;
+        model.addAttribute("user", new User());
+		return "rest/user/add";
+	}
+
+
+	@RequestMapping(value="/add", method=RequestMethod.POST)
+	public String addUser(User user){
+        //pass a empty object to frontend;
+        this.userMap.put(user.getId(), user);
+		return "redirect:/user/users";
+
+     }
 }

@@ -9,12 +9,15 @@
 </head>
 <body>
 	<c:forEach items="${users}" var="um">
-		-- ${um.value.id} 
+		-- ${um.value.id}
 		-- ${um.value.name}
 		-- ${um.value.email}
 		<br>
 	</c:forEach>
-	
+
+    <a href="add">add User</a>
+
+
 </body>
 </html>
 

@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,8 +39,13 @@ public class UserRestController {
 
 
 	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public String addUser(User user){
+	public String addUser(@Validated User user, BindingResult br){ //BindingResult must be beside @Validated parameter
         //pass a empty object to frontend;
+		if (br.hasErrors()){
+			//model.addAttribute("user", user);    -> //this statment is not must
+			return "rest/user/add"; 
+		}
+		
         this.userMap.put(user.getId(), user);
 		return "redirect:/user/users";
 

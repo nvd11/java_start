@@ -7,35 +7,36 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>radprod Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  
+
   <properties>
         <java-version>1.7</java-version>
         <org.springframework.version>4.1.4.RELEASE</org.springframework.version>
         <servlet-api-version>2.5</servlet-api-version>
         <jstl-version>1.2</jstl-version>
         <tablibs-version>1.1.2</tablibs-version>
+        <bean-validation-version>5.2.4.Final</bean-validation-version>
  </properties>
-  
+
   <dependencies>
   <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>servlet-api</artifactId>
     <version>${servlet-api-version}</version>
  </dependency>
- 
+
  <!-- http://mvnrepository.com/artifact/javax.servlet/jstl -->
 	<dependency>
 	    <groupId>javax.servlet</groupId>
 	    <artifactId>jstl</artifactId>
 	    <version>${jstl-version}</version>
 	</dependency>
-	
+
 	<dependency>
    	 <groupId>taglibs</groupId>
    	 <artifactId>standard</artifactId>
    	 <version>${tablibs-version}</version>
 	</dependency>
-  
+
   <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -61,28 +62,34 @@
       <artifactId>spring-tx</artifactId>
       <version>${org.springframework.version}</version>
     </dependency>
-    
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
       <version>${org.springframework.version}</version>
     </dependency>
-    
-    
-  	
-  	
+
+    <!-- bean validation -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>${bean-validation-version}</version>
+	</dependency>
+
+
+
   </dependencies>
   <build>
     <finalName>radprod</finalName>
-     <plugins>  
-        <plugin>  
-            <groupId>org.apache.maven.plugins</groupId>  
-            <artifactId>maven-compiler-plugin</artifactId>  
-            <configuration>  
-                <source>1.7</source>  
-                <target>1.7</target>  
-            </configuration>  
-        </plugin>  
-    </plugins> 
+     <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+            </configuration>
+        </plugin>
+    </plugins>
   </build>
 </project>

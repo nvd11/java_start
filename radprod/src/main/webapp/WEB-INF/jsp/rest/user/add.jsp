@@ -10,10 +10,10 @@
 <body>
     <!-- no action defined here, the form will submit to /add as default -->
     <form:form method="post" modelAttribute="user">
-          Userid:<form:input path="id"/><br/>
-          Username:<form:input path="name"/><br/>
-          nickname:<form:input path="nickName"/><br/>
-          email:<form:input path="email"/><br/>
+          Userid:<form:input path="id"/><form:errors path="id"/><br/>
+          Username:<form:input path="name"/><form:errors path="name"/><br/>
+          nickname:<form:input path="nickName"/><form:errors path="nickName"/><br/>
+          email:<form:input path="email"/><form:errors path="email"/><br/>
           <input type="submit" value="Add User"/>
     </form:form>
 

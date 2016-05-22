@@ -11,6 +11,7 @@
         <jstl-version>1.2</jstl-version>
         <tablibs-version>1.1.2</tablibs-version>
         <bean-validation-version>5.2.4.Final</bean-validation-version>
+        <c3p0-version>0.9.1.2</c3p0-version>
  </properties>
   
  <dependencies>
@@ -27,6 +28,20 @@
       </exclusions>
       -->
     </dependency>
+    
+    <!-- c3p0 openSource database connection -->
+    <dependency>
+    	<groupId>c3p0</groupId>
+    	<artifactId>c3p0</artifactId>
+    	<version>${c3p0-version}</version>
+	</dependency>
+	
+	<!--  mysql driver -->
+	<dependency>
+    	<groupId>mysql</groupId>
+    	<artifactId>mysql-connector-java</artifactId>
+    	<version>5.1.39</version>
+	</dependency>
   </dependencies>
   
    <build>

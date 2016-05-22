@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/java/applicationContext.xml</config>
 		<config>src/main/java/bean-autowire.xml</config>
+		<config>src/main/java/bean-configfile.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

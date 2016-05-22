@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="car" class="com.home.autowire.Dcar" p:brand="Audi" p:price="10000"/>
+	
+	<bean id="address" class="com.home.autowire.Daddress" p:city="Canton" p:street="teenho" p:number="103"/>
+	
+	<!--  normal assemble -->
+	<bean id="person1" class="com.home.autowire.Dperson" p:name="Bill" p:car-ref="car" p:address-ref="address"/>
+	
+	<!--  auto wire-->
+	<bean id="person2" class="com.home.autowire.Dperson" p:name="Lily" autowire="byName"/>
+	
+	<!--  auto wire byType-->
+	<bean id="person3" class="com.home.autowire.Dperson" p:name="Jessie" autowire="byType"/>
+
+
+</beans>

@@ -7,10 +7,31 @@ import com.home.hello.HelloWorld;
 import com.home.hello.Car;
 import com.home.hello.Person;
 import com.home.hello.RichPerson;
+import com.home.factoryBean.FactoryBeanClient;
+import com.home.factoryMethod.*;
 
 public class SpringTest {
 	
-	public static void main(String[] args){
+
+	public static void main(String args[]){
+		//Client.f();
+		FactoryBeanClient.f();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void mainf(){
 		
 		//HelloWorld hd = new HelloWorld();
 		

@@ -10,6 +10,8 @@
 		<config>src/main/java/applicationContext.xml</config>
 		<config>src/main/java/bean-autowire.xml</config>
 		<config>src/main/java/bean-configfile.xml</config>
+		<config>src/main/java/bean-factoryMethod.xml</config>
+		<config>src/main/java/bean-FactoryBean.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

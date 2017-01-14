@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 class Main {
-	public static void main(String[] args){
+	public static void mainf(){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("bean-configfile.xml");
 		
 		DataSource dataSource = (DataSource) ctx.getBean("dataSource");

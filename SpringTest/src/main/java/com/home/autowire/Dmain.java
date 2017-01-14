@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Dmain {
-	public static void main(String[] args){
+	public static void mainf(){
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("bean-autowire.xml");
 		
 		Dperson p1 = (Dperson) ctx.getBean("person1");

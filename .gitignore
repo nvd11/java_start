@@ -27,3 +27,9 @@
 # temp files
 *.swp
 *.swo
+
+# targets
+target
+
+# idea
+.idea/

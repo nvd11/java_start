@@ -16,6 +16,11 @@ public class SpringTest {
 	public static void main(String args[]){
 		//Client.f();
 		FactoryBeanClient.f();
+		
+//		String s[] = System.getProperty("java.class.path").split(";");  
+//		for (String string : s) {  
+//		    System.out.println(string);  
+//		}  
 	}
 	
 	

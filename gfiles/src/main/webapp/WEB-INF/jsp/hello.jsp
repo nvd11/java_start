@@ -1,6 +1,5 @@
 <%--
   Created by IntelliJ IDEA.
-  User: gateman
   Date: 17-10-15
   Time: 下午5:37
   To change this template use File | Settings | File Templates.

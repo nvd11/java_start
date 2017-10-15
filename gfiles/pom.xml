@@ -16,19 +16,18 @@
         <tablibs-version>1.1.2</tablibs-version>
         <bean-validation-version>5.2.4.Final</bean-validation-version>
         <c3p0-version>0.9.1.2</c3p0-version>
+        <jackson-databind.version>2.2.3</jackson-databind.version>
     </properties>
 
     <dependencies>
 
         <!-- it's must-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl-version}</version>
+        </dependency>
 
-
-
-	<dependency>
-	    <groupId>javax.servlet</groupId>
-	    <artifactId>jstl</artifactId>
-	    <version>${jstl-version}</version>
-	</dependency>
         <!-- Spring Base -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -60,6 +59,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
             <version>${org.springframework.version}</version>
+        </dependency>
+
+        <!-- convert object data to json-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
         </dependency>
 
 

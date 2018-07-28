@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "girl")
+@ConfigurationProperties(prefix = "girl") //means it will get properties value from config file(application.yml):  item "girl"
 public class GrilProperty {
 
     private String cupSize;

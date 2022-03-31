@@ -10,7 +10,7 @@
 
     <properties>
         <java-version>1.7</java-version>
-        <org.springframework.version>4.1.4.RELEASE</org.springframework.version>
+        <org.springframework.version>5.3.18</org.springframework.version>
         <servlet-api-version>2.5</servlet-api-version>
         <jstl-version>1.2</jstl-version>
         <tablibs-version>1.1.2</tablibs-version>

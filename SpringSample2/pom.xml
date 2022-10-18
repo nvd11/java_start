@@ -15,7 +15,7 @@
 	<org.slf4j.version>1.7.5</org.slf4j.version>
 	<hibernate.version>4.2.11.Final</hibernate.version>
 	<logback.version>1.1.2</logback.version>
-	<jackson-databind.version>2.2.3</jackson-databind.version>
+	<jackson-databind.version>2.13.4.1</jackson-databind.version>
 	<jtds.version>1.2.8</jtds.version>
 	<commons-dbcp.version>1.4</commons-dbcp.version>
 	<javax.inject.version>1</javax.inject.version>
